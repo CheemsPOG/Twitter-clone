@@ -45,10 +45,17 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: '', // Default bio
     },
-    link: {
+  link: {
         type: String,
         default: '', // Default link
     },
+  likedPosts: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Post',
+      default: [],
+    },
+  ]
 }, {
   timestamps: true, // Automatically manage createdAt and updatedAt fields
 });
